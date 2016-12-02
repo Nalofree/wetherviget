@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    .viget#viget
+      .viget-features
+        #city.btn.dropdown(data-title=cityslist[0].city_id)= decodeURI(cityslist[0].city_alias)
+        ul#citylist.citylist
+          - for (var i = 0; i < cityslist.length; i++)
+            li.citylist-item(id = cityslist[i].city_id)= cityslist[i].city_alias
+        #days.btn.dropdown= "3"
+        ul#dayslist.dayslist
+          li.dayslist-item= "1"
+          li.dayslist-item= "2"
+          li.dayslist-item= "3"
+        #revolve.btn(data-title="1")= "H"
+      .viget-result#result
+        //- .viget-result-item
+        //-   .viget-result-item__heading Сегодня
+        //-   .viget-result-item__text
+        //-     div 
+        //-       p Температура
+        //-       p= "+5" + " .. " + "-10"
+        //-     div
+        //-       p Ветер
+        //-       p= "20" + "км/ч"
+        //- .viget-result-item
+        //-   .viget-result-item__heading Завтра
+        //-   .viget-result-item__text
+        //-     div 
+        //-       p Температура
+        //-       p= "+5" + " .. " + "-10"
+        //-     div
+        //-       p Ветер
+        //-       p= "20" + "км/ч"
+        //- .viget-result-item
+        //-   .viget-result-item__heading Послезавтра
+        //-   .viget-result-item__text
+        //-     div 
+        //-       p Температура
+        //-       p= "+5" + " .. " + "-10"
+        //-     div
+        //-       p Ветер
+        //-       p= "20" + "км/ч"
+        .clearfix
+      .viget-getcode.btn(id="getcode") Получить код
+      .viget-code#codewrap
+        input#code(type="text")
+        span#codeclose= " x "

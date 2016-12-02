@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    - var posC = configs.config_position === 2 ? "viget vertical" : "viget"
+    div#viget(class=posC)
+      .viget-features
+        - var i = cityslist.length
+        - var cityIndex = 0
+        - while(i--) 
+          - if (cityslist[i].city_id === configs.config_city)
+            - cityIndex = i
+        #city.btn.dropdown(data-title=configs.config_city)= decodeURI(cityslist[cityIndex].city_alias)
+        ul#citylist.citylist
+          - for (var i = 0; i < cityslist.length; i++)
+            li.citylist-item(id = cityslist[i].city_id)= cityslist[i].city_alias
+        #days.btn.dropdown= "3"
+        ul#dayslist.dayslist
+          li.dayslist-item= "1"
+          li.dayslist-item= "2"
+          li.dayslist-item= "3"
+        - var posL = configs.config_position === 2 ? "V" : "H"
+        #revolve.btn(data-title=configs.config_position)= posL
+      .viget-result#result
+        .clearfix
+      .viget-getcode.btn(id="save", data-title=configs.config_id) Сохранить

@@ -1,0 +1,158 @@
+body {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.viget {
+  position: relative;
+  display: inline-block;
+  /*width: 460px;*/
+  /*height: 210px;*/
+  padding: 10px;
+  background-color: #ecf0f1;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  border-radius: 5px;
+  min-width: 240px;
+  z-index: 20;
+}
+
+.viget-features {
+  display: block;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  margin-left: 5px;
+  /*margin-right: 5px;*/
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #3498db;
+}
+
+.btn.dropdown::after {
+  content: '';
+  position: absolute; /* Абсолютное позиционирование */
+  right: 5px; bottom: 5px; /* Положение треугольника */
+  border: 5px solid transparent; /* Прозрачные границы */
+  border-top: 5px solid #fff; /* Добавляем треугольник */
+}
+
+.dropdown {
+  padding-right: 25px;
+}
+
+.viget-result {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.viget-result-item {
+  position: relative;
+  display: inline-block;
+  /*margin-left: 5px;*/
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  width: 140px;
+  /*float: left;*/
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.viget-result-item + .viget-result-item {
+  margin-left: 10px;
+}
+
+.clearfix {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.viget-getcode {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 0;
+  background-color: #2ecc71;
+  text-align: center;
+  width: 200px;
+  left: 50%;
+  margin-left: -105px;
+}
+
+.citylist, .dayslist {
+  position: absolute;
+  display: none;
+  list-style: none;
+  z-index: 50;
+  background-color: #3498db;
+  padding: 10px;
+  top: 30px;
+  right: 80px;
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  color: #fff;
+}
+
+.dayslist {
+  width: auto;
+  right: 40px;
+}
+
+.citylist-item, .dayslist-item {
+  position: relative;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.citylist-item:hover, .dayslist-item:hover {
+  background-color: #57bcfd;
+}
+
+.viget.vertical .viget-result-item {
+  display: block;
+  left: 50%;
+  margin-left: -70px;
+}
+
+.viget.vertical .viget-result-item + .viget-result-item {
+  margin-top: 10px;
+}
+
+.viget-code {
+  position: absolute;
+  width: 100%;
+  display: none;
+  text-align: center;
+  padding: 10px;
+  background-color: #ecf0f1;
+  width: 250px;
+  left: 50%;
+  margin-left: -125px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.viget-code input {
+  display: inline-block;
+  width: 200px;
+}
+
+.viget-code span {
+  cursor: pointer;
+}
