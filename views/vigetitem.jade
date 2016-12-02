@@ -13,7 +13,7 @@ block content
         ul#citylist.citylist
           - for (var i = 0; i < cityslist.length; i++)
             li.citylist-item(id = cityslist[i].city_id)= cityslist[i].city_alias
-        #days.btn.dropdown= "3"
+        #days.btn.dropdown= configs.config_days
         ul#dayslist.dayslist
           li.dayslist-item= "1"
           li.dayslist-item= "2"

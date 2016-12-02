@@ -107,7 +107,7 @@ function setVigetItem() {
 };
 
 function saveCinfid() {
-  ajax('/saveconfig/:'+save.getAttribute('data-title'), function(data){
+  ajax('/saveconfig/'+save.getAttribute('data-title'), function(data){
     console.log(data);
   });
 };
@@ -124,5 +124,7 @@ if (getcode) {
 };
 
 if (save) {
-
+  save.onclick = function () {
+    saveCinfid();
+  }
 }

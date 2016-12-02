@@ -15,7 +15,7 @@ var sequelize = new Sequelize('viget_db', 'viget_user', '12345Viget12345', {
 });
 
 /* GET users listing. */
-router.get('/:vigetid?', function(req, res, next) {
+router.post('/:vigetid?', function(req, res, next) {
   if (req.params.vigetid) {
     // res.send(req.params.vigetid);
     // params = {}
@@ -64,7 +64,7 @@ router.get('/:vigetid?', function(req, res, next) {
               weather.find({search: cityslist[0].city_name+', Russia', degreeType: 'C', "imagerelativeurl": "http://blob.weather.microsoft.com/static/weather4/ru-ru/"}, function(err, result) {
                 if(err) console.log(err);
                 //console.log(result[0].forecast[0]);
-                res.render('vigetitem',
+                res.send(
                 { result: result,
                   cityslist: cityslist,
                   configs: configs }
