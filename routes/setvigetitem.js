@@ -33,7 +33,8 @@ router.post('/', function (req,res,next) {
       config_days: req.body.days,
       config_position: req.body.position
     }).then(function (x) {
-      codestring = "<iframe src='http://localhost:3000/viget/"+x.config_id;
+      // console.log(req.headers.host);
+      codestring = "<iframe src='http://"+req.headers.host+"/viget/"+x.config_id;
       codestring += (req.body.position == 1) ? "' frameborder='0' width='470' height='220'></iframe>" : "' frameborder='0' width='260' height='470'></iframe>";
       res.send({
         insertid: x.config_id,
